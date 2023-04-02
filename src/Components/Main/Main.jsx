@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Aside from './Aside/Aside';
 import Products from './Products/Products';
-const Main = () => {
+const Main = ({handleAddToCart}) => {
     const [products, setProducts] = useState([])
     useEffect(() => {
         fetch('Products.json')
@@ -14,7 +14,7 @@ const Main = () => {
                 <Aside products={products} />
             </div>
             <div className=' col-span-4'>
-                <Products products={products} />
+                <Products handleAddToCart={handleAddToCart} products={products} />
             </div>
         </div>
     );

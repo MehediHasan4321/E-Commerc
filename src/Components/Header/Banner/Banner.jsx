@@ -1,9 +1,10 @@
 import React from 'react';
+import ImageSlider from './ImageSlider/ImageSlider';
 
 const Banner = () => {
     return (
-        <div className='h-[40vh] bg-purple-400 w-full mt-20'>
-            
+        <div className='w-full h-[40vh] bg-purple-400 mt-20'>
+            <ImageSlider/>
         </div>
     );
 };

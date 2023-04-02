@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Aside = ({ products }) => {
+    const [inputValue,setInputValue] = useState(0)
     const menSneaker = products.filter(product => product.category === "Men's Sneaker")
     const menPants = products.filter(product => product.category === "Men's Pants")
     const Bag = products.filter(product => product.category === "Bag")
     const cap = products.filter(product => product.category === "Cap")
     const earphones = products.filter(product => product.category === "Earphones")
     const bottle = products.filter(product => product.category === "Bottle")
+   
     return (
         <div className='bg-purple-200 mx-5 p-5 sticky top-20 space-y-6 rounded-md'>
             <div className='flex justify-between bg-purple-300 rounded-md py-2 px-5'>
@@ -34,7 +36,8 @@ const Aside = ({ products }) => {
                 <p>({bottle.length})</p>
             </div>
             <div className='flex justify-between bg-purple-300 rounded-md py-2 px-5'>
-                <input type="rang" min='$0' max='$520' name="" id="" />
+                <input type="range" min='$0' max='$520' name="" id="rangeInp" />
+                <p>(${inputValue})</p>
             </div>
             
         </div>
